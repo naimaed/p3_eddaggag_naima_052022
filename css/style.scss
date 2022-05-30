@@ -1,0 +1,30 @@
+@import "./sass/utils/variables";
+@import "./sass/utils/mixins";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	max-width: 768px;
+	margin: auto;
+	font-family: roboto, sans-serif;
+}
+
+header {
+	border-bottom: 1px solid lightgrey;
+	box-shadow: 0 2px 10px;
+	display: flex;
+	justify-content: center;
+}
+.logo img {
+	@include header;
+}
+
+.search-by-city {
+	display: flex;
+	justify-content: center;
+}
+img {
+	width: 200px;
+}
