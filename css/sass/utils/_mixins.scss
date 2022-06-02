@@ -1,5 +1,38 @@
 @mixin header {
-	width: 150px;
-	padding-top: 20px;
+	width: 160px;
+	padding-top: 15px;
 	padding-bottom: 10px;
+}
+
+@mixin footer {
+	display: flex;
+	flex-direction: column;
+	background-color: $color-background-footer;
+	padding-left: 20px;
+	padding-bottom: 30px;
+}
+
+@mixin footer-style {
+	color: white;
+	text-decoration: none;
+}
+
+@mixin h3 {
+	font-family: shrikhand, sans-serif;
+	color: white;
+}
+@mixin footer-items {
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 10px;
+}
+
+@mixin footer-items-i-1 {
+	padding-right: 10px;
+	font-size: 15px;
+}
+
+@mixin footer-items-i-2 {
+	padding-right: 10px;
+	font-size: 12px;
 }

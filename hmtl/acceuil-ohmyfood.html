@@ -7,10 +7,8 @@
 		<link rel="stylesheet" href="../css/normalize.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&family=Roboto:wght@100;300&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap"
 			rel="stylesheet"
 		/>
 		<script
@@ -37,69 +35,79 @@
 			</div>
 		</header>
 		<main>
-			<div>
-				<nav>
+			<div class="introduction">
+				<nav class="search-city">
 					<form action="#" method="get" class="search-by-city">
-						<button>
+						<button class="form-btn">
 							<i class="fa-solid fa-location-dot"></i>
 						</button>
-						<div><input type="text" placeholder="Paris, Belleville" /></div>
+						<div>
+							<input
+								class="form-input"
+								type="text"
+								placeholder="Paris, Belleville"
+							/>
+						</div>
 					</form>
 				</nav>
 
-				<h1>Réservez le menu qui vous convient</h1>
-				<p>découvrez des restaurants d'exception, sélectionné par nos soins.</p>
-				<a href="explorez-nos-restaurants">
-					<div>Explorer nos restaurants</div>
-				</a>
+				<div class="intro">
+					<h1>Réservez le menu qui vous convient</h1>
+					<p>
+						découvrez des restaurants d'exception, sélectionnés par nos soins.
+					</p>
+					<a href="explorez-nos-restaurants">
+						<div>Explorer nos restaurants</div>
+					</a>
+				</div>
 			</div>
 
 			<div class="block-restaurant">
-				<section>
-					<h2>Fonctionnement</h2>
+				<section class="selection">
+					<h2 class="fonctionnement">Fonctionnement</h2>
 
-					<nav>
+					<nav class="nav-menu">
 						<form action="#" method="get">
-							<a href="choisissez–un–restaurant">
-								<div>
-									<i class="fa-light fa-circle-1"></i>
+							<a href="choose-restaurant">
+								<div class="nav-menu-number">
+									<i class="fa-solid fa-1"></i>
 								</div>
 
-								<div>
+								<div class="nav-menu-icon">
 									<i class="fa-solid fa-mobile-screen-button"></i>
 								</div>
-								<div>choisissez un restaurant</div>
+								<div class="nav-menu-text">choisissez un restaurant</div>
 							</a>
 						</form>
 
 						<form action="#" method="get">
-							<a href="composez–votre–menu">
-								<div>
-									<i class="fa-light fa-circle-2"></i>
+							<a href="costomize–menu">
+								<div class="nav-menu-number">
+									<i class="fa-solid fa-2"></i>
 								</div>
-								<div>
+								<div class="nav-menu-icon">
 									<i class="fa-solid fa-list"></i>
 								</div>
-								<div>Composez votre menu</div>
+								<div class="nav-menu-text">Composez votre menu</div>
 							</a>
 						</form>
 
 						<form action="#" method="get">
-							<a href="dégustez-au-restaurant">
-								<div>
-									<i class="fa-light fa-circle-3"></i>
+							<a href="dine-in">
+								<div class="nav-menu-number">
+									<i class="fa-solid fa-3"></i>
 								</div>
-								<div>
+								<div class="nav-menu-icon">
 									<i class="fa-solid fa-store"></i>
 								</div>
-								<div>dégustez au restaurant</div>
+								<div class="nav-menu-text">dégustez au restaurant</div>
 							</a>
 						</form>
 					</nav>
 				</section>
 
 				<section>
-					<h2>restaurants</h2>
+					<h2 class="restaurants">restaurants</h2>
 
 					<div class="cards-restaurants">
 						<div class="cards">
@@ -111,7 +119,7 @@
 									/>
 								</div>
 								<div class="cards-text">
-									<h3>La palette du goût</h3>
+									<h4>La palette du goût</h4>
 									<p>Ménilmontant</p>
 								</div>
 								<div class="cards-heart">
@@ -129,7 +137,7 @@
 									/>
 								</div>
 								<div class="cards-text">
-									<h3>La palette du goût</h3>
+									<h4>La palette du goût</h4>
 									<p>Ménilmontant</p>
 								</div>
 								<div class="cards-heart">
@@ -147,7 +155,7 @@
 									/>
 								</div>
 								<div class="cards-text">
-									<h3>La palette du goût</h3>
+									<h4>La palette du goût</h4>
 									<p>Ménilmontant</p>
 								</div>
 								<div class="cards-heart">
@@ -165,7 +173,7 @@
 									/>
 								</div>
 								<div class="cards-text">
-									<h3>La palette du goût</h3>
+									<h4>La palette du goût</h4>
 									<p>Ménilmontant</p>
 								</div>
 								<div class="cards-heart">
@@ -179,25 +187,26 @@
 		</main>
 
 		<footer>
-			<div>
-				<a href="#">
-					<h4>
-						<img src="./images/logo/ohmyfood.png" alt="ohmyfood" />
-					</h4>
-				</a>
-				<a href="#">
-					<i class="fa-solid fa-utensils"></i>
-					<p>proposer un restaurant</p>
-				</a>
-
-				<a href="#">
-					<i class="fa-thin fa-handshake-angle"></i>
-					<p>devenir partenaire</p>
-				</a>
-
-				<a href="#"> Mentions légales </a>
-
-				<a href="#"> Contact </a>
+			<div class="footer">
+				<h3>ohmyfood</h3>
+				<div class="footer-item">
+					<a href="#">
+						<i class="fa-solid fa-utensils"></i>
+						<div>proposer un restaurant</div>
+					</a>
+				</div>
+				<div class="footer-item">
+					<a href="#">
+						<i class="fa-solid fa-handshake-angle"></i>
+						<div>devenir partenaire</div>
+					</a>
+				</div>
+				<div class="footer-item">
+					<a href="#"> Mentions légales </a>
+				</div>
+				<div>
+					<a href="mailto:neddaggag@gmail.com"> Contact </a>
+				</div>
 			</div>
 		</footer>
 	</body>
