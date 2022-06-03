@@ -133,25 +133,17 @@ h1 {
   background-color: #f6f6f6;
 }
 
-.restaurants-cards {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
-  box-shadow: 5px 5px 15px -10px;
-  transform: scale(1);
-  transition: transform 600ms;
-}
-.restaurants-cards:hover {
-  transform: scale(1.15);
-}
-
 .restaurants {
   margin-bottom: 20px;
 }
 
-.cards {
-  border-radius: 20px;
-  box-shadow: 0 0 15px -10px;
+.restaurants-cards a {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  color: black;
+  text-decoration: none;
+  line-height: 5px;
 }
 
 .restaurants-cards-text {
@@ -167,21 +159,6 @@ h1 {
   font-weight: bold;
 }
 
-.cards a {
-  color: black;
-  text-decoration: none;
-  line-height: 5px;
-  box-shadow: 5px 5px 15px -10px;
-}
-
-.restaurants-cards a {
-  transform: scale(1);
-  transition: transform 600ms;
-}
-.restaurants-cards a:hover {
-  transform: scale(1.15);
-}
-
 .cards-img img {
   width: 100%;
   height: 200px;
@@ -191,7 +168,6 @@ h1 {
 
 .cards-hearts i {
   background-color: transparent;
-  transform: scale(1);
   font-size: 20px;
 }
 

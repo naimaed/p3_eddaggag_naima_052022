@@ -20,13 +20,13 @@
 
 // main
 
-// introduction
+// transitions & shodows
 
 @mixin homepage-box-transitions {
 	transform: scale(1);
-	transition: transform 600ms;
+	transition: transform 600ms ease-out;
 	&:hover {
-		transform: scale(1.15);
+		transform: scale(1.05);
 	}
 }
 
@@ -34,6 +34,7 @@
 	box-shadow: 5px 5px 15px -10px;
 }
 
+// introduction
 @mixin search-by-city {
 	display: flex;
 	justify-content: center;
@@ -139,18 +140,20 @@
 }
 
 // restaurants cards
-@mixin restaurant-display-grid {
-	display: grid;
-	gap: 20px;
-	grid-template-columns: 1fr;
-}
+
 @mixin restaurant-display {
 	width: 100%;
 	padding: 30px 20px 60px 20px;
 	background-color: $background-lightgrey;
 }
 
-@mixin restaurants {
+@mixin restaurants-h2 {
+	margin-bottom: 20px;
+}
+
+@mixin restaurant-display-grid {
+	display: grid;
+	grid-template-rows: 1fr;
 	margin-bottom: 20px;
 }
 
@@ -186,12 +189,13 @@
 }
 
 @mixin homepage-restaurants-heart {
-	background-color: transparent;
-	transform: scale(1);
-	font-size: 20px;
+	cursor: pointer;
+	border: 2px solid red;
+	font-size: 25px;
 }
 
 // footer
+
 @mixin footer {
 	display: flex;
 	flex-direction: column;

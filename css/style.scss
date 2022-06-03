@@ -50,8 +50,14 @@ h1 {
 .intro p {
 	@include homepage-intro-p;
 }
-.intro a {
+.intro-btn {
 	@include homepage-intro-a;
+	@include box-shadow-restaurants-and-menu;
+}
+
+.intro a:hover {
+	@include box-shadow-restaurants-and-menu;
+	@include homepage-box-transitions;
 }
 
 .fonctionnement {
@@ -66,10 +72,13 @@ h1 {
 
 .nav-menu a {
 	@include homepage-nav-menu-a;
+	@include box-shadow-restaurants-and-menu;
 }
 
 .nav-menu a:hover {
 	@include homepage-nav-menu-a-hover;
+	@include homepage-box-transitions;
+	@include box-shadow-restaurants-and-menu;
 }
 
 .nav-menu-number {
@@ -87,18 +96,19 @@ h1 {
 .cards-section {
 	@include restaurant-display;
 }
-.restaurants-cards {
-	@include restaurant-display-grid;
-	@include box-shadow-restaurants-and-menu;
-	@include homepage-box-transitions;
+
+#restaurants {
+	@include restaurants-h2;
 }
 
-.restaurants {
-	@include restaurants;
+.restaurants-cards a {
+	@include restaurant-display-grid;
+	@include cards-a-style;
 }
 
 .cards {
 	@include restaurant-style;
+	@include homepage-box-transitions;
 }
 
 .restaurants-cards-text {
@@ -109,21 +119,11 @@ h1 {
 	@include h4;
 }
 
-.cards a {
-	@include cards-a-style;
-
-	@include box-shadow-restaurants-and-menu;
-}
-
-.restaurants-cards a {
-	@include homepage-box-transitions;
-}
-
 .cards-img img {
 	@include restaurants-homepage-img;
 }
 
-.cards-hearts i {
+.fa-regular--fa-heart {
 	@include homepage-restaurants-heart;
 }
 
