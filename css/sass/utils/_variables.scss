@@ -4,7 +4,11 @@ $color-tertiary: #99e2d0;
 $color-background-footer: rgb(58, 57, 57);
 $background-lightgrey: #f6f6f6;
 $color-nav-menu-icon: grey;
-
+$linear-gradient-basic: linear-gradient(
+	170deg,
+	$color-secondary,
+	$color-primary
+);
 $color-primary-btn-active: #e2d4f6;
 
 $taille-standard-margin: 5px;

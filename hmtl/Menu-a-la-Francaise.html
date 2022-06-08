@@ -29,24 +29,27 @@
 	</head>
 	<body>
 		<header>
-			<div>
-				<i class="fa-thin fa-arrow-left"></i>
-				<img src="../images/logo/ohmyfood.png" alt="oh-my-food" />
+			<div class="header-restaurants">
+				<a href="../hmtl/acceuil-ohmyfood.html"
+					><i class="fa-solid fa-arrow-left"></i
+				></a>
+				<img class="logo" src="../images/logo/ohmyfood.png" alt="oh-my-food" />
 			</div>
 		</header>
 
 		<main>
 			<div>
 				<img
+					class="restaurants-img"
 					src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
 					alt="À-la-Française"
 				/>
-				<h1>À la Française</h1>
 			</div>
 
 			<div class="menu">
+				<div><h1 class="restaurants-h1">La note enchantée</h1></div>
 				<section class="entrees">
-					<h2>ENTRÉES</h2>
+					<h2 class="restaurants-h2">ENTRÉES</h2>
 					<a href="#">
 						<h3>Tartare de poulpe acidulé</h3>
 						<div class="detail et prix">
@@ -72,7 +75,7 @@
 					</a>
 				</section>
 				<section class="plats">
-					<h2>PLATS</h2>
+					<h2 class="restaurants-h2">PLATS</h2>
 					<a href="#">
 						<h3>Coquilles Saint-Jacques</h3>
 						<div class="detail et prix">
@@ -99,7 +102,7 @@
 				</section>
 
 				<section>
-					<h2>DESSERTS</h2>
+					<h2 class="restaurants-h2">DESSERTS</h2>
 
 					<a href="#">
 						<h3>Pétales de violettes glacés</h3>
@@ -124,27 +127,33 @@
 					</a>
 				</section>
 			</div>
+			<nav class="order">
+				<form action="#" method="get">
+					<button class="form-btn">Commander</button>
+				</form>
+			</nav>
 		</main>
 		<footer>
-			<div>
-				<a href="#">
-					<h4>
-						<img src="../images/logo/ohmyfood.png" alt="ohmyfood" />
-					</h4>
-				</a>
-				<a href="#">
-					<i class="fa-solid fa-utensils"></i>
-					<p>proposer un restaurant</p>
-				</a>
-
-				<a href="#">
-					<i class="fa-thin fa-handshake-angle"></i>
-					<p>devenir partenaire</p>
-				</a>
-
-				<a href="#"> Mentions légales </a>
-
-				<a href="#"> Contact </a>
+			<div class="footer">
+				<h3>ohmyfood</h3>
+				<div class="footer-item">
+					<a href="#">
+						<i class="fa-solid fa-utensils"></i>
+						<div>proposer un restaurant</div>
+					</a>
+				</div>
+				<div class="footer-item">
+					<a href="#">
+						<i class="fa-solid fa-handshake-angle"></i>
+						<div>devenir partenaire</div>
+					</a>
+				</div>
+				<div class="footer-item">
+					<a href="#"> Mentions légales </a>
+				</div>
+				<div>
+					<a href="mailto:neddaggag@gmail.com"> Contact </a>
+				</div>
 			</div>
 		</footer>
 	</body>

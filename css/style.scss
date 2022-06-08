@@ -41,6 +41,45 @@ header {
 
 .intro {
 	@include homepage-intro;
+	position: relative;
+}
+
+// spinner
+
+.loader {
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+}
+
+.loader div {
+	width: 20px;
+	height: 20px;
+	background: $color-primary;
+	border-radius: 50%;
+	animation: loader 0.5s cubic-bezier(0.19, 0.57, 0.3, 0.98) infinite alternate;
+}
+
+.loader div:nth-child(2) {
+	animation-delay: 0.1s;
+	opacity: 0.8;
+}
+
+.loader div:nth-child(3) {
+	animation-delay: 0.2s;
+	opacity: 0.4;
+}
+
+@keyframes loader {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-100px);
+	}
 }
 
 h1 {
@@ -53,11 +92,11 @@ h1 {
 .intro-btn {
 	@include homepage-intro-a;
 	@include box-shadow-restaurants-and-menu;
+	@include homepage-box-transitions;
 }
 
 .intro a:hover {
 	@include box-shadow-restaurants-and-menu;
-	@include homepage-box-transitions;
 }
 
 .fonctionnement {
@@ -73,11 +112,11 @@ h1 {
 .nav-menu a {
 	@include homepage-nav-menu-a;
 	@include box-shadow-restaurants-and-menu;
+	@include homepage-box-transitions;
 }
 
 .nav-menu a:hover {
 	@include homepage-nav-menu-a-hover;
-	@include homepage-box-transitions;
 	@include box-shadow-restaurants-and-menu;
 }
 
@@ -88,7 +127,7 @@ h1 {
 	@include homepage-nav-menu-icon;
 }
 .nav-menu-text {
-	margin-left: 20px;
+	@include margin-left-text;
 }
 
 // restaurants part
@@ -98,7 +137,11 @@ h1 {
 }
 
 #restaurants {
-	@include restaurants-h2;
+	@include restaurants;
+}
+
+.new-tag {
+	@include new-tag;
 }
 
 .restaurants-cards a {
@@ -123,8 +166,155 @@ h1 {
 	@include restaurants-homepage-img;
 }
 
-.fa-regular--fa-heart {
-	@include homepage-restaurants-heart;
+.cards-heart {
+	fill: black;
+	stroke: transparent;
+	stroke-width: 11;
+	position: relative;
+
+	svg {
+		overflow: visible;
+		width: 25px;
+		stroke: var($linear-gradient-basic);
+	}
+
+	.heart path {
+		stroke-dashoffset: 1560;
+		stroke-dasharray: 0;
+	}
+
+	.heart:hover path {
+		animation: stroke-animation 2s linear forwards;
+	}
+}
+
+@keyframes stroke-animation {
+	0% {
+		stroke-dashoffset: 0;
+	}
+	30% {
+		stroke-dashoffset: 1560;
+		stroke: $linear-gradient-basic;
+	}
+
+	80% {
+		stroke-dashoffset: 1560;
+		stroke: $linear-gradient-basic;
+		fill: $linear-gradient-basic;
+	}
+
+	100% {
+		stroke-dashoffset: 3120;
+		stroke: $linear-gradient-basic;
+	}
+}
+
+// la palette du gout
+
+// header
+
+// header {
+// 	@include header-restaurants-position;
+// }
+
+.fa-arrow-left {
+	padding-right: 250px;
+}
+
+.logo {
+	@include header-position;
+}
+
+.restaurants-img {
+	@include restaurant-page-img;
+}
+
+// main
+
+.restaurants-h1 {
+	@include h1-style;
+}
+
+.menu-course {
+	margin: 50px 20px 0 20px;
+}
+
+.restaurants-h2 {
+	@include restaurants-h2;
+	position: relative;
+}
+
+.restaurants-h2::after {
+	content: "";
+	position: absolute;
+	width: 45px;
+	height: 4px;
+	background-color: $color-tertiary;
+	left: 20px;
+	top: 25px;
+}
+
+.menu {
+	background-color: #f6f6f6;
+	margin-top: -90px;
+	border-radius: 30px 30px 0 0;
+	padding-bottom: 30px;
+}
+
+// .entrees {
+// 	margin-left: 20px;
+// 	margin-right: 20px;
+// }
+
+// .plats {
+// 	margin-left: 20px;
+// 	margin-right: 20px;
+// }
+
+// .desserts {
+// 	margin-left: 20px;
+// 	margin-right: 20px;
+// }
+
+.dish-cards {
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding-top: 5px;
+	background-color: white;
+	@include box-shadow-restaurants-and-menu;
+}
+
+.dish-cards a {
+	text-decoration: none;
+	color: black;
+	line-height: 10px;
+}
+
+.dish-cards h3 {
+	color: black;
+	font-family: Roboto, sans-serif;
+	padding-left: 20px;
+}
+
+.dish-cards-price {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.order-btn {
+	background-image: linear-gradient(170deg, $color-secondary, $color-primary);
+	border-radius: 30px;
+	padding: 10px 20px 10px 20px;
+	margin-bottom: 30px;
+	margin-top: 40px;
+	border: none;
+}
+
+.order {
+	@include header-flex;
 }
 
 // footer
