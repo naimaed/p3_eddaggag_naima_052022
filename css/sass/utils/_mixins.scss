@@ -169,8 +169,10 @@
 }
 
 @mixin restaurants-h2 {
-	margin-bottom: 20px;
-	margin-top: 50px;
+	font-size: 18px;
+	font-weight: normal;
+	padding-left: 20px;
+	padding-bottom: 10px;
 }
 
 @mixin restaurant-display-grid {
@@ -237,12 +239,6 @@
 	justify-content: flex-start;
 	margin-left: 40px;
 	padding-top: 40px;
-}
-
-@mixin restaurants-h2 {
-	font-size: 18px;
-	font-weight: normal;
-	padding-left: 20px;
 }
 
 // footer

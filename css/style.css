@@ -240,44 +240,30 @@ h1 {
 }
 
 .cards-heart {
-  fill: black;
-  stroke: transparent;
-  stroke-width: 11;
+  font-size: 26px;
   position: relative;
 }
-.cards-heart svg {
-  overflow: visible;
-  width: 25px;
-  stroke: var(linear-gradient(170deg, #ff79da, #9356dc));
+.cards-heart .fa-regular {
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  z-index: -1;
 }
-.cards-heart .heart path {
-  stroke-dashoffset: 1560;
-  stroke-dasharray: 0;
+.cards-heart .fa-solid {
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  opacity: 0;
+  transition: all 200ms ease;
 }
-.cards-heart .heart:hover path {
-  animation: stroke-animation 2s linear forwards;
-}
-
-@keyframes stroke-animation {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  30% {
-    stroke-dashoffset: 1560;
-    stroke: linear-gradient(170deg, #ff79da, #9356dc);
-  }
-  80% {
-    stroke-dashoffset: 1560;
-    stroke: linear-gradient(170deg, #ff79da, #9356dc);
-    fill: linear-gradient(170deg, #ff79da, #9356dc);
-  }
-  100% {
-    stroke-dashoffset: 3120;
-    stroke: linear-gradient(170deg, #ff79da, #9356dc);
-  }
-}
-.fa-arrow-left {
-  padding-right: 250px;
+.cards-heart:hover .fa-solid {
+  position: absolute;
+  color: transparent;
+  background-image: linear-gradient(180deg, #9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transform: translate(all 500ms ease-in-out);
 }
 
 .logo {
@@ -310,6 +296,7 @@ h1 {
   font-size: 18px;
   font-weight: normal;
   padding-left: 20px;
+  padding-bottom: 10px;
   position: relative;
 }
 
