@@ -35,6 +35,14 @@
 	box-shadow: 5px 5px 15px -10px;
 }
 
+@mixin box-shadow-restaurants-and-menu-hover {
+	box-shadow: 15px 15px 50px -10px;
+}
+
+@mixin box-explore-restaurants {
+	box-shadow: 15px 15px 20px -5px;
+}
+
 // margin
 
 @mixin margin-left-text {
@@ -213,15 +221,12 @@
 }
 
 // restaurant pages
-// header
-@mixin header-for-restaurants {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
-@mixin header-for-restaurants-logo {
-	width: 130px;
+// header
+
+@mixin logo {
+	font-family: shrikhand, sans-serif;
+	font-size: 30px;
 }
 
 // restaurant page img position
@@ -230,13 +235,14 @@
 	max-width: 100%;
 	position: relative;
 	z-index: -1;
-	top: 10px;
+	top: 270px;
+	margin-top: -260px;
 }
 @mixin h1-style {
 	font-size: 24px;
 	font-family: shrikhand, sans-serif;
-	display: flex;
-	justify-content: flex-start;
+	// display: flex;
+	// justify-content: flex-start;
 	margin-left: 40px;
 	padding-top: 40px;
 }

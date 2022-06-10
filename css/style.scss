@@ -11,7 +11,7 @@ body {
 
 // header
 
-header {
+.header-restaurants {
 	@include header-flex;
 }
 .logo img {
@@ -46,61 +46,55 @@ header {
 
 // spinner
 
-.loader {
-	position: fixed;
-	inset: 0;
-	z-index: 1;
-	overflow: hidden;
-	background: #fff;
-	opacity: 0;
-	animation: loader 5s;
-}
+// .loader {
+// 	position: fixed;
+// 	inset: 0;
+// 	z-index: 1;
+// 	overflow: hidden;
+// 	background: #fff;
+// 	opacity: 0;
+// 	animation: loader 5s ease-out;
+// }
 
-.loading {
-	position: sticky;
-	inset: 50%;
-	z-index: 1;
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	background: $linear-gradient-basic;
-	animation: loading 0.5s infinite alternate;
-}
-.loading:nth-child(2) {
-	animation-delay: 0.1s;
-}
+// .loading {
+// 	position: sticky;
+// 	inset: 50%;
+// 	z-index: 1;
+// 	width: 20px;
+// 	height: 20px;
+// 	border-radius: 50%;
+// 	background: $linear-gradient-basic;
+// 	animation: loading 0.7s infinite alternate;
+// }
+// .loading:nth-child(2) {
+// 	animation-delay: 0.1s;
+// }
 
-.loading:nth-child(3) {
-	animation-delay: 0.2s;
-}
+// .loading:nth-child(3) {
+// 	animation-delay: 0.2s;
+// }
 
-@keyframes loading {
-	0% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(-100px);
-	}
+// @keyframes loading {
+// 	from {
+// 		transform: translateY(0);
+// 	}
 
-	80% {
-		transform: translateY(0);
-	}
-	90% {
-		transform: translateY(-100px);
-	}
+// 	to {
+// 		transform: translateY(-100px);
+// 	}
+// }
+// @keyframes loader {
+// 	0% {
+// 		opacity: 0.7;
+// 	}
 
-	100% {
-		transform: translateY(0);
-	}
-}
-@keyframes loader {
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-}
+// 	80% {
+// 		opacity: 0.7;
+// 	}
+// 	100% {
+// 		opacity: 0;
+// 	}
+// }
 
 h1 {
 	@include h1;
@@ -111,12 +105,8 @@ h1 {
 }
 .intro-btn {
 	@include homepage-intro-a;
-	@include box-shadow-restaurants-and-menu;
+	@include box-explore-restaurants;
 	@include homepage-box-transitions;
-}
-
-.intro a:hover {
-	@include box-shadow-restaurants-and-menu;
 }
 
 .fonctionnement {
@@ -137,7 +127,7 @@ h1 {
 
 .nav-menu a:hover {
 	@include homepage-nav-menu-a-hover;
-	@include box-shadow-restaurants-and-menu;
+	@include box-shadow-restaurants-and-menu-hover;
 }
 
 .nav-menu-number {
@@ -172,6 +162,11 @@ h1 {
 .cards {
 	@include restaurant-style;
 	@include homepage-box-transitions;
+	@include box-shadow-restaurants-and-menu;
+}
+
+.cards:hover {
+	@include box-shadow-restaurants-and-menu-hover;
 }
 
 .restaurants-cards-text {
@@ -190,14 +185,14 @@ h1 {
 	font-size: 26px;
 	position: relative;
 
-	.fa-regular {
+	.regular-heart-restaurant {
 		position: absolute;
 		bottom: -10px;
 		right: 10px;
 		z-index: -1;
 	}
 
-	.fa-solid {
+	.solid-heart-restaurant {
 		position: absolute;
 		bottom: -10px;
 		right: 10px;
@@ -205,7 +200,7 @@ h1 {
 		transition: all 200ms ease;
 	}
 
-	&:hover .fa-solid {
+	&:hover .solid-heart-restaurant {
 		position: absolute;
 		color: transparent;
 		background-image: linear-gradient(180deg, #9356dc, #ff79da);
@@ -216,8 +211,21 @@ h1 {
 	}
 }
 
-.logo {
-	@include header-position;
+// page menu des restautrants
+
+.header-restaurants-menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 10px;
+}
+.header-restaurants-arrow {
+	text-decoration: none;
+	font-size: 22px;
+	align-self: flex-start;
+}
+.header-restaurants-logo {
+	@include logo;
 }
 
 .restaurants-img {
@@ -226,6 +234,39 @@ h1 {
 
 // main
 
+.restaurants-heart {
+	font-size: 26px;
+	position: relative;
+
+	.regular-heart-menu {
+		position: absolute;
+		bottom: -10px;
+		right: 10px;
+		z-index: -1;
+	}
+
+	.solid-heart-menu {
+		position: absolute;
+		bottom: -10px;
+		right: 10px;
+		opacity: 0;
+		transition: all 200ms ease;
+	}
+
+	&:hover .solid-heart-menu {
+		position: absolute;
+		color: transparent;
+		background-image: linear-gradient(180deg, #9356dc, #ff79da);
+		background-clip: text;
+		-webkit-background-clip: text;
+		opacity: 1;
+		transform: translate(all 500ms ease-in-out);
+	}
+}
+
+.header-restaurants {
+	margin-right: 50px;
+}
 .restaurants-h1 {
 	@include h1-style;
 }
@@ -257,44 +298,120 @@ h1 {
 }
 
 .dish-cards {
+	position: relative;
 	border-radius: 20px;
 	margin-bottom: 20px;
 	padding-top: 5px;
 	background-color: white;
 	@include box-shadow-restaurants-and-menu;
+	@include homepage-box-transitions;
+	z-index: 1;
+	transition: transform 500ms ease-in-out;
+}
+.dish-cards::after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 20%;
+	border-radius: 0 20px 20px 0;
+	background-color: $color-tertiary;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	transform: scaleX(0);
+	transform-origin: right;
+}
+.dish-cards:hover::after {
+	transform: scaleX(1);
+	transition: transform 500ms ease-in-out;
+}
+.dish-cards-anim {
+	animation: dish-cards-anim 1s ease-in-out;
+}
+
+.dish-cards:nth-child(1) {
+	animation: dish-cards-anim 1.5s;
+}
+
+.dish-cards:nth-child(2) {
+	animation: dish-cards-anim 2s;
+}
+
+.dish-cards:nth-child(3) {
+	animation: dish-cards-anim 2.5s;
+}
+.dish-cards:nth-child(4) {
+	animation: dish-cards-anim 3s;
+}
+
+@keyframes dish-cards-anim {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translatey(0px);
+	}
 }
 
 .dish-cards a {
+	max-width: 100%;
 	text-decoration: none;
 	color: black;
 	line-height: 10px;
 }
 
 .dish-cards h3 {
+	width: 100%;
 	color: black;
 	font-family: Roboto, sans-serif;
 	padding-left: 20px;
+	text-overflow: ellipsis;
 }
 
 .dish-cards-price {
+	width: 100%;
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-bottom: 20px;
 	display: flex;
 	justify-content: space-between;
+	text-overflow: ellipsis;
 }
 .fa-check-circle {
-	font-size: 20px;
+	position: absolute;
+	opacity: 0;
+	top: 30px;
+	right: -25px;
+	font-size: 28px;
+	border-radius: 50%;
 	color: white;
 	background-color: $color-tertiary;
-	animation: rotate-center 0.6s ease-in-out both;
+}
+.dish-cards:hover .fa-check-circle {
+	animation: rotate-center 0.5s ease-in-out both;
 }
 @keyframes rotate-center {
 	0% {
-		transform: rotate(0);
+		transform: translatex(0) rotate(0);
+		opacity: 0;
+	}
+	25% {
+		transform: translatex(-20px) rotate(90deg);
+		opacity: 1;
+	}
+	50% {
+		transform: translatex(-40px) rotate(180deg);
+		opacity: 1;
+	}
+	75% {
+		transform: translatex(-60px) rotate(360deg);
+		opacity: 1;
 	}
 	100% {
-		transform: rotate(360deg);
+		transform: translatex(-80px) rotate(360deg);
+		opacity: 1;
 	}
 }
 
@@ -305,6 +422,8 @@ h1 {
 	margin-bottom: 30px;
 	margin-top: 40px;
 	border: none;
+	color: white;
+	@include homepage-box-transitions;
 }
 
 .order {
