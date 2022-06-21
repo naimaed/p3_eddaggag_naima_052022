@@ -1,13 +1,76 @@
-* {
+html {
   box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   max-width: 768px;
+  width: 100vh;
   margin: auto;
   font-family: roboto, sans-serif;
 }
 
+h3 {
+  font-family: shrikhand, sans-serif;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.loader {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(170deg, #ff79da, #9356dc);
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.7;
+  animation: loader 3s ease-in-out forwards;
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.loader::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  border: 15px solid transparent;
+  border-radius: 50%;
+  border-top-color: #99e2d0;
+  animation: loading-spinner 3s ease-in-out forwards;
+}
+
+@keyframes loading-spinner {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(6turn);
+  }
+}
 .header-restaurants {
   display: flex;
   justify-content: center;
@@ -77,7 +140,6 @@ h1 {
   border: 1px none black;
   padding: 15px 20px 15px 20px;
   border-radius: 30px;
-  text-decoration: none;
   font-size: 16px;
   color: white;
   background-image: linear-gradient(170deg, #ff79da, #9356dc);
@@ -103,7 +165,6 @@ h1 {
 .nav-menu a {
   display: flex;
   flex-direction: row;
-  text-decoration: none;
   color: black;
   font-size: 16px;
   margin-bottom: 20px;
@@ -141,12 +202,6 @@ h1 {
   margin-left: 20px;
 }
 
-.cards-section {
-  width: 100%;
-  padding: 30px 20px 60px 20px;
-  background-color: #f6f6f6;
-}
-
 #restaurants {
   margin: 20px 0 20px 0;
 }
@@ -166,7 +221,6 @@ h1 {
   grid-template-rows: 1fr;
   margin-bottom: 20px;
   color: black;
-  text-decoration: none;
   line-height: 5px;
 }
 
@@ -192,10 +246,6 @@ h1 {
   align-items: center;
   padding-left: 15px;
   padding-right: 20px;
-}
-
-.h4 {
-  font-weight: bold;
 }
 
 .cards-img img {
@@ -234,15 +284,13 @@ h1 {
 
 .header-restaurants-menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding-top: 10px;
 }
 
-.header-restaurants-arrow {
-  text-decoration: none;
+.header-restaurants i {
   font-size: 22px;
-  align-self: flex-start;
 }
 
 .header-restaurants-logo {
@@ -336,6 +384,7 @@ h1 {
   transition: transform, 500ms ease-in-out;
   z-index: 1;
   transition: transform 500ms ease-in-out;
+  animation: dish-cards-anim 1s ease-in-out;
 }
 .dish-cards:hover {
   transform: scale(1.05);
@@ -358,10 +407,6 @@ h1 {
 .dish-cards:hover::after {
   transform: scaleX(1);
   transition: transform 500ms ease-in-out;
-}
-
-.dish-cards-anim {
-  animation: dish-cards-anim 1s ease-in-out;
 }
 
 .dish-cards:nth-child(1) {
@@ -392,9 +437,9 @@ h1 {
 }
 .dish-cards a {
   max-width: 100%;
-  text-decoration: none;
   color: black;
   line-height: 10px;
+  text-overflow: ellipsis;
 }
 
 .dish-cards h3 {
@@ -412,7 +457,6 @@ h1 {
   padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
-  text-overflow: ellipsis;
 }
 
 .fa-check-circle {
@@ -487,7 +531,6 @@ h3 {
 
 .footer a {
   color: white;
-  text-decoration: none;
   display: flex;
   flex-direction: row;
   padding-bottom: 10px;

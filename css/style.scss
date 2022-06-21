@@ -1,3 +1,4 @@
+@use "./sass/globals/index";
 @import "./sass/utils/variables";
 @import "./sass/utils/mixins";
 
@@ -5,8 +6,47 @@
 	box-sizing: border-box;
 }
 
-body {
-	@include body-style;
+// spinner
+
+.loader {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(170deg, $color-secondary, $color-primary);
+	height: 100vh;
+	inset: 0;
+	z-index: 1;
+	opacity: 0.7;
+	animation: loader 3s ease-in-out forwards;
+}
+@keyframes loader {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}
+.loader::after {
+	content: "";
+	width: 100px;
+	height: 100px;
+	border: 15px solid transparent;
+	border-radius: 50%;
+	border-top-color: $color-tertiary;
+	animation: loading-spinner 3s ease-in-out forwards;
+}
+
+@keyframes loading-spinner {
+	0% {
+		transform: rotate(0turn);
+	}
+
+	100% {
+		transform: rotate(6turn);
+	}
 }
 
 // header
@@ -14,6 +54,7 @@ body {
 .header-restaurants {
 	@include header-flex;
 }
+
 .logo img {
 	@include header-position;
 }
@@ -43,58 +84,6 @@ body {
 	@include homepage-intro;
 	position: relative;
 }
-
-// spinner
-
-// .loader {
-// 	position: fixed;
-// 	inset: 0;
-// 	z-index: 1;
-// 	overflow: hidden;
-// 	background: #fff;
-// 	opacity: 0;
-// 	animation: loader 5s ease-out;
-// }
-
-// .loading {
-// 	position: sticky;
-// 	inset: 50%;
-// 	z-index: 1;
-// 	width: 20px;
-// 	height: 20px;
-// 	border-radius: 50%;
-// 	background: $linear-gradient-basic;
-// 	animation: loading 0.7s infinite alternate;
-// }
-// .loading:nth-child(2) {
-// 	animation-delay: 0.1s;
-// }
-
-// .loading:nth-child(3) {
-// 	animation-delay: 0.2s;
-// }
-
-// @keyframes loading {
-// 	from {
-// 		transform: translateY(0);
-// 	}
-
-// 	to {
-// 		transform: translateY(-100px);
-// 	}
-// }
-// @keyframes loader {
-// 	0% {
-// 		opacity: 0.7;
-// 	}
-
-// 	80% {
-// 		opacity: 0.7;
-// 	}
-// 	100% {
-// 		opacity: 0;
-// 	}
-// }
 
 h1 {
 	@include h1;
@@ -142,10 +131,6 @@ h1 {
 
 // restaurants part
 
-.cards-section {
-	@include restaurant-display;
-}
-
 #restaurants {
 	@include restaurants;
 }
@@ -171,10 +156,6 @@ h1 {
 
 .restaurants-cards-text {
 	@include cards-a-position;
-}
-
-.h4 {
-	@include h4;
 }
 
 .cards-img img {
@@ -215,17 +196,16 @@ h1 {
 
 .header-restaurants-menu {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	padding-top: 10px;
 }
-.header-restaurants-arrow {
-	text-decoration: none;
+.header-restaurants i {
 	font-size: 22px;
-	align-self: flex-start;
 }
 .header-restaurants-logo {
 	@include logo;
+	// align-self: center;
 }
 
 .restaurants-img {
@@ -299,6 +279,7 @@ h1 {
 
 .dish-cards {
 	position: relative;
+
 	border-radius: 20px;
 	margin-bottom: 20px;
 	padding-top: 5px;
@@ -307,6 +288,7 @@ h1 {
 	@include homepage-box-transitions;
 	z-index: 1;
 	transition: transform 500ms ease-in-out;
+	animation: dish-cards-anim 1s ease-in-out;
 }
 .dish-cards::after {
 	content: "";
@@ -324,9 +306,6 @@ h1 {
 .dish-cards:hover::after {
 	transform: scaleX(1);
 	transition: transform 500ms ease-in-out;
-}
-.dish-cards-anim {
-	animation: dish-cards-anim 1s ease-in-out;
 }
 
 .dish-cards:nth-child(1) {
@@ -357,9 +336,9 @@ h1 {
 
 .dish-cards a {
 	max-width: 100%;
-	text-decoration: none;
 	color: black;
 	line-height: 10px;
+	text-overflow: ellipsis;
 }
 
 .dish-cards h3 {
@@ -377,8 +356,8 @@ h1 {
 	padding-bottom: 20px;
 	display: flex;
 	justify-content: space-between;
-	text-overflow: ellipsis;
 }
+
 .fa-check-circle {
 	position: absolute;
 	opacity: 0;

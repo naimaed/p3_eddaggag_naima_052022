@@ -1,9 +1,4 @@
 // body
-@mixin body-style {
-	max-width: 768px;
-	margin: auto;
-	font-family: roboto, sans-serif;
-}
 
 // header
 
@@ -107,7 +102,6 @@
 	border: 1px none black;
 	padding: 15px 20px 15px 20px;
 	border-radius: 30px;
-	text-decoration: none;
 	font-size: 16px;
 	color: white;
 	background-image: linear-gradient(170deg, $color-secondary, $color-primary);
@@ -127,7 +121,7 @@
 @mixin homepage-nav-menu-a {
 	display: flex;
 	flex-direction: row;
-	text-decoration: none;
+
 	color: black;
 	font-size: 16px;
 	margin-bottom: 20px;
@@ -203,7 +197,7 @@
 
 @mixin cards-a-style {
 	color: black;
-	text-decoration: none;
+
 	line-height: 5px;
 }
 
@@ -214,10 +208,6 @@
 	align-items: center;
 	padding-left: 15px;
 	padding-right: 20px;
-}
-
-@mixin h4 {
-	font-weight: bold;
 }
 
 // restaurant pages
@@ -241,8 +231,6 @@
 @mixin h1-style {
 	font-size: 24px;
 	font-family: shrikhand, sans-serif;
-	// display: flex;
-	// justify-content: flex-start;
 	margin-left: 40px;
 	padding-top: 40px;
 }
@@ -259,7 +247,6 @@
 
 @mixin footer-style {
 	color: white;
-	text-decoration: none;
 }
 
 @mixin h3 {
