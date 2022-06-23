@@ -6,14 +6,15 @@
 	box-sizing: border-box;
 }
 
+// page acceuil ohmyfood
+
 // spinner
 
 .loader {
 	position: fixed;
-	display: flex;
-	justify-content: center;
+	@include flex-center;
 	align-items: center;
-	background-image: linear-gradient(170deg, $color-secondary, $color-primary);
+	@include background-image;
 	height: 100vh;
 	inset: 0;
 	z-index: 1;
@@ -52,11 +53,14 @@
 // header
 
 .header-restaurants {
-	@include header-flex;
+	@include flex-center;
+	align-items: center;
 }
 
 .logo img {
-	@include header-position;
+	width: 160px;
+	padding-top: 15px;
+	padding-bottom: 10px;
 }
 
 // main
@@ -64,102 +68,167 @@
 // research area
 
 .search-by-city {
-	@include search-by-city;
+	@include flex-center;
+	padding: 13px 0 13px 0;
+	background-color: rgba(239, 239, 239);
+	box-shadow: inset 0px 5px 5px rgb(232, 232, 232);
+	padding-left: 25px;
 }
 
 .form-btn {
-	@include homepage-form-btn;
+	border: none;
+	padding-left: 15px;
 }
 
 .form-input {
-	@include homepage-form-input;
+	border: none;
+	background-color: rgba(239, 239, 239);
+	@include flex-center;
+	padding-left: 15px;
+	font-weight: bold;
+	font-weight: 400;
 }
 ::placeholder {
-	@include homepage-form-placeholder;
+	color: black;
+	opacity: 1;
 }
 
 // introduction
 
 .intro {
-	@include homepage-intro;
+	@include display-flex-center;
 	position: relative;
+	flex-flow: column wrap;
+	text-align: center;
+	background-color: rgb(247, 247, 247);
+	padding-bottom: 50px;
 }
 
-h1 {
-	@include h1;
+.intro-title {
+	font-weight: bold;
+	font-size: 22px;
+	padding-top: 30px;
 }
 
 .intro p {
-	@include homepage-intro-p;
+	margin: 10px 30px 30px 30px;
+	color: grey;
+	font-size: 17px;
+	font-weight: 300;
 }
 .intro-btn {
-	@include homepage-intro-a;
-	@include box-explore-restaurants;
+	border: 1px none black;
+	padding: 15px 20px 15px 20px;
+	border-radius: 30px;
+	font-size: 16px;
+
+	@include background-image;
+	background-position: right;
 	@include homepage-box-transitions;
 }
-
+.intro a {
+	color: white;
+}
 .fonctionnement {
-	@include fonctionnement;
+	margin-top: 40px;
+	font-size: 24px;
+	font-weight: bold;
 }
 
 // nav bar search
 
 .selection {
-	@include selection;
+	display: flex;
+	flex-direction: column;
+	margin: 0 20px 40px 20px;
 }
 
 .nav-menu a {
-	@include homepage-nav-menu-a;
+	display: flex;
+	flex-direction: row;
+	color: black;
+	font-size: 16px;
+	margin-bottom: 20px;
+	background-color: $background-lightgrey;
+	border-radius: 20px;
+	padding: 20px 0 20px 30px;
 	@include box-shadow-restaurants-and-menu;
 	@include homepage-box-transitions;
 }
-
 .nav-menu a:hover {
-	@include homepage-nav-menu-a-hover;
-	@include box-shadow-restaurants-and-menu-hover;
+	background-color: $color-primary-btn-active;
+	@include box-shadow-restaurants-and-menu;
 }
 
 .nav-menu-number {
-	@include homepage-nav-menu-number;
+	font-size: 10px;
+	margin-left: -35px;
+	margin-right: 20px;
+	padding: 3px 6px 3px 6px;
+	border: 1px solid $color-primary;
+	background-color: $color-primary;
+	border-radius: 40px;
 }
 .nav-menu-icon {
-	@include homepage-nav-menu-icon;
+	color: $color-nav-menu-icon;
 }
 .nav-menu-text {
-	@include margin-left-text;
+	margin-left: 20px;
 }
 
-// restaurants part
+// restaurants list
 
 #restaurants {
-	@include restaurants;
+	font-family: roboto, sans-serif;
+	margin: 20px 0 20px 15px;
+}
+
+.restaurants-cards {
+	margin: 0 15px 0 15px;
 }
 
 .new-tag {
-	@include new-tag;
+	position: absolute;
+	right: 10px;
+	bottom: 230px;
+	border: 1px solid $color-tertiary;
+	background-color: $color-tertiary;
+	padding: 10px;
+	font-size: 14px;
 }
 
 .restaurants-cards a {
-	@include restaurant-display-grid;
-	@include cards-a-style;
+	display: grid;
+	grid-template-rows: 1fr;
+	margin-bottom: 20px;
+	line-height: 5px;
 }
 
 .cards {
-	@include restaurant-style;
+	border-radius: 20px;
+	box-shadow: 0 0 15px -10px;
 	@include homepage-box-transitions;
 	@include box-shadow-restaurants-and-menu;
 }
+.cards img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 20px 20px 0 0;
+}
+.cards-text {
+	padding-top: 20px;
+}
 
 .cards:hover {
-	@include box-shadow-restaurants-and-menu-hover;
+	box-shadow: 15px 15px 50px -10px;
 }
 
 .restaurants-cards-text {
-	@include cards-a-position;
-}
-
-.cards-img img {
-	@include restaurants-homepage-img;
+	@include display-space-between;
+	flex-direction: row;
+	padding-left: 15px;
+	padding-right: 20px;
 }
 
 .cards-heart {
@@ -172,7 +241,6 @@ h1 {
 		right: 10px;
 		z-index: -1;
 	}
-
 	.solid-heart-restaurant {
 		position: absolute;
 		bottom: -10px;
@@ -180,11 +248,10 @@ h1 {
 		opacity: 0;
 		transition: all 200ms ease;
 	}
-
 	&:hover .solid-heart-restaurant {
 		position: absolute;
 		color: transparent;
-		background-image: linear-gradient(180deg, #9356dc, #ff79da);
+		@include background-image;
 		background-clip: text;
 		-webkit-background-clip: text;
 		opacity: 1;
@@ -192,85 +259,80 @@ h1 {
 	}
 }
 
-// page menu des restautrants
+// menu pages
 
 .header-restaurants-menu {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-top: 10px;
+	@include display-space-between;
+	margin-bottom: -20px;
 }
 .header-restaurants i {
 	font-size: 22px;
 }
-.header-restaurants-logo {
-	@include logo;
-	// align-self: center;
-}
 
 .restaurants-img {
-	@include restaurant-page-img;
+	max-width: 100%;
+	position: relative;
+	z-index: -1;
+	top: 270px;
+	margin-top: -260px;
 }
 
 // main
 
-.restaurants-heart {
-	font-size: 26px;
+.restaurant-title {
+	@include display-space-between;
+}
+.cards-heart-menu {
 	position: relative;
-
-	.regular-heart-menu {
-		position: absolute;
-		bottom: -10px;
-		right: 10px;
-		z-index: -1;
-	}
-
-	.solid-heart-menu {
-		position: absolute;
-		bottom: -10px;
-		right: 10px;
-		opacity: 0;
-		transition: all 200ms ease;
-	}
-
-	&:hover .solid-heart-menu {
-		position: absolute;
-		color: transparent;
-		background-image: linear-gradient(180deg, #9356dc, #ff79da);
-		background-clip: text;
-		-webkit-background-clip: text;
-		opacity: 1;
-		transform: translate(all 500ms ease-in-out);
-	}
 }
-
-.header-restaurants {
-	margin-right: 50px;
+.regular-heart-menu {
+	font-size: 26px;
+	position: absolute;
+	bottom: -35px;
+	right: 20px;
+	z-index: 0;
 }
-.restaurants-h1 {
-	@include h1-style;
+.solid-heart-menu {
+	font-size: 26px;
+	position: absolute;
+	bottom: -35px;
+	right: 20px;
+	opacity: 0;
+	z-index: 2;
+	transition: all 200ms ease;
+}
+.solid-heart-menu:hover {
+	position: absolute;
+	color: transparent;
+	@include background-image;
+	background-clip: text;
+	-webkit-background-clip: text;
+	opacity: 1;
+	transform: translate(all 500ms ease-in-out);
 }
 
 .menu-course {
 	margin: 50px 20px 0 20px;
 }
 
-.restaurants-h2 {
-	@include restaurants-h2;
+.menu-page-h3 {
+	font-size: 18px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
 	position: relative;
-}
 
-.restaurants-h2::after {
-	content: "";
-	position: absolute;
-	width: 45px;
-	height: 4px;
-	background-color: $color-tertiary;
-	left: 20px;
-	top: 25px;
+	&::after {
+		content: "";
+		position: absolute;
+		width: 45px;
+		height: 4px;
+		background-color: $color-tertiary;
+		left: 0;
+		top: 25px;
+	}
 }
-
 .menu {
+	position: relative;
 	background-color: #f6f6f6;
 	margin-top: -90px;
 	border-radius: 30px 30px 0 0;
@@ -279,48 +341,47 @@ h1 {
 
 .dish-cards {
 	position: relative;
-
 	border-radius: 20px;
 	margin-bottom: 20px;
-	padding-top: 5px;
+	padding: 5px 5px 5px 20px;
 	background-color: white;
 	@include box-shadow-restaurants-and-menu;
 	@include homepage-box-transitions;
 	z-index: 1;
 	transition: transform 500ms ease-in-out;
 	animation: dish-cards-anim 1s ease-in-out;
-}
-.dish-cards::after {
-	content: "";
-	position: absolute;
-	height: 100%;
-	width: 20%;
-	border-radius: 0 20px 20px 0;
-	background-color: $color-tertiary;
-	top: 0;
-	right: 0;
-	z-index: -1;
-	transform: scaleX(0);
-	transform-origin: right;
-}
-.dish-cards:hover::after {
-	transform: scaleX(1);
-	transition: transform 500ms ease-in-out;
-}
+	&::after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 20%;
+		border-radius: 0 20px 20px 0;
+		background-color: $color-tertiary;
+		top: 0;
+		right: 0;
+		z-index: -1;
+		transform: scaleX(0);
+		transform-origin: right;
+	}
 
-.dish-cards:nth-child(1) {
-	animation: dish-cards-anim 1.5s;
-}
+	&:hover::after {
+		transform: scaleX(1);
+		transition: transform 500ms ease-in-out;
+	}
+	&:nth-child(1) {
+		animation: dish-cards-anim 1.5s;
+	}
 
-.dish-cards:nth-child(2) {
-	animation: dish-cards-anim 2s;
-}
+	&:nth-child(2) {
+		animation: dish-cards-anim 2s;
+	}
 
-.dish-cards:nth-child(3) {
-	animation: dish-cards-anim 2.5s;
-}
-.dish-cards:nth-child(4) {
-	animation: dish-cards-anim 3s;
+	&:nth-child(3) {
+		animation: dish-cards-anim 2.5s;
+	}
+	&:nth-child(4) {
+		animation: dish-cards-anim 3s;
+	}
 }
 
 @keyframes dish-cards-anim {
@@ -335,27 +396,17 @@ h1 {
 }
 
 .dish-cards a {
-	max-width: 100%;
-	color: black;
-	line-height: 10px;
-	text-overflow: ellipsis;
-}
-
-.dish-cards h3 {
-	width: 100%;
-	color: black;
-	font-family: Roboto, sans-serif;
-	padding-left: 20px;
-	text-overflow: ellipsis;
-}
-
-.dish-cards-price {
-	width: 100%;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 20px;
+	// max-width: 100%;
 	display: flex;
-	justify-content: space-between;
+	// justify-content: space-between;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	color: black;
+	border: 1px solid red;
+
+	& > * {
+		border: 1px solid black;
+	}
 }
 
 .fa-check-circle {
@@ -395,7 +446,7 @@ h1 {
 }
 
 .order-btn {
-	background-image: linear-gradient(170deg, $color-secondary, $color-primary);
+	@include background-image;
 	border-radius: 30px;
 	padding: 10px 20px 10px 20px;
 	margin-bottom: 30px;
@@ -406,16 +457,14 @@ h1 {
 }
 
 .order {
-	@include header-flex;
+	@include flex-center;
 }
 
 // footer
 .footer {
 	@include footer;
 }
-h3 {
-	@include h3;
-}
+
 .footer a {
 	@include footer-style;
 	@include footer-items;

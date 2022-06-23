@@ -1,9 +1,29 @@
-h3 {
+h1 {
+	font-weight: bold;
 	font-family: shrikhand, sans-serif;
+	font-size: 30px;
+}
+
+h2 {
+	font-size: 24px;
+	font-family: shrikhand, sans-serif;
+	margin-left: 40px;
+	padding-top: 40px;
+}
+
+h3 {
+	font-size: 17px;
+	margin: 0;
+}
+
+h4 {
+	font-family: shrikhand, sans-serif;
+	color: white;
 }
 
 a,
 a:visited,
 a:active {
 	text-decoration: none;
+	color: black;
 }

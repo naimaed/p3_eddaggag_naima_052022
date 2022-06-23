@@ -1,19 +1,17 @@
-// body
-
-// header
-
-@mixin header-position {
-	width: 160px;
-	padding-top: 15px;
-	padding-bottom: 10px;
+@mixin background-image {
+	background-image: linear-gradient(170deg, $color-secondary, $color-primary);
 }
 
-@mixin header-flex {
+@mixin flex-center {
 	display: flex;
 	justify-content: center;
 }
 
-// main
+@mixin display-space-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
 // transitions & shadows
 
@@ -27,132 +25,16 @@
 }
 
 @mixin box-shadow-restaurants-and-menu {
-	box-shadow: 5px 5px 15px -10px;
-}
-
-@mixin box-shadow-restaurants-and-menu-hover {
 	box-shadow: 15px 15px 50px -10px;
 }
 
-@mixin box-explore-restaurants {
-	box-shadow: 15px 15px 20px -5px;
-}
-
-// margin
-
-@mixin margin-left-text {
-	margin-left: 20px;
-}
-
-// introduction
-@mixin search-by-city {
-	display: flex;
-	justify-content: center;
-	padding: 13px 0 13px 0;
-	background-color: rgba(239, 239, 239);
-	box-shadow: inset 0px 5px 5px rgb(232, 232, 232);
-	padding-left: 25px;
-}
-
-@mixin homepage-form-btn {
-	border: none;
-	padding-left: 15px;
-}
-
-@mixin homepage-form-input {
-	border: none;
-	background-color: rgba(239, 239, 239);
-	display: flex;
-	justify-content: center;
-	padding-left: 15px;
-	font-weight: bold;
-	font-weight: 400;
-}
-
-@mixin homepage-form-placeholder {
-	color: black;
-	opacity: 1;
-}
-
-@mixin homepage-intro {
+@mixin display-flex-center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: column wrap;
-	text-align: center;
-	background-color: rgb(247, 247, 247);
-	padding-bottom: 50px;
-}
-
-@mixin h1 {
-	font-weight: bold;
-	font-size: 22px;
-	margin: 40px 60px 0 60px;
-	text-align: center;
-}
-
-@mixin homepage-intro-p {
-	margin: 10px 30px 30px 30px;
-	color: grey;
-	font-size: 17px;
-	font-weight: 300;
-}
-
-@mixin homepage-intro-a {
-	border: 1px none black;
-	padding: 15px 20px 15px 20px;
-	border-radius: 30px;
-	font-size: 16px;
-	color: white;
-	background-image: linear-gradient(170deg, $color-secondary, $color-primary);
-	background-position: right;
-}
-
-@mixin fonctionnement {
-	margin-top: 40px;
-}
-
-@mixin selection {
-	display: flex;
-	flex-direction: column;
-	margin: 0 20px 40px 20px;
-}
-
-@mixin homepage-nav-menu-a {
-	display: flex;
-	flex-direction: row;
-
-	color: black;
-	font-size: 16px;
-	margin-bottom: 20px;
-	background-color: $background-lightgrey;
-	border-radius: 20px;
-	padding: 20px 0 20px 30px;
-}
-
-@mixin homepage-nav-menu-a-hover {
-	background-color: $color-primary-btn-active;
-}
-
-@mixin homepage-nav-menu-number {
-	font-size: 10px;
-	margin-left: -7 * $taille-standard-margin;
-	margin-right: 20px;
-	padding: 3px 6px 3px 6px;
-	border: 1px solid $color-primary;
-	background-color: $color-primary;
-	border-radius: 40px;
-}
-
-@mixin homepage-nav-menu-icon {
-	color: $color-nav-menu-icon;
 }
 
 // restaurants cards
-
-@mixin restaurants {
-	margin: 20px 0 20px 0;
-}
 
 @mixin restaurant-display {
 	width: 100%;
@@ -160,80 +42,7 @@
 	background-color: $background-lightgrey;
 }
 
-@mixin new-tag {
-	position: absolute;
-	right: 10px;
-	bottom: 230px;
-	border: 1px solid $color-tertiary;
-	background-color: $color-tertiary;
-	padding: 10px;
-	font-size: 14px;
-}
-
-@mixin restaurants-h2 {
-	font-size: 18px;
-	font-weight: normal;
-	padding-left: 20px;
-	padding-bottom: 10px;
-}
-
-@mixin restaurant-display-grid {
-	display: grid;
-	grid-template-rows: 1fr;
-	margin-bottom: 20px;
-}
-
-@mixin restaurants-homepage-img {
-	width: 100%;
-	height: 200px;
-	object-fit: cover;
-	border-radius: 20px 20px 0 0;
-}
-
-@mixin restaurant-style {
-	border-radius: 20px;
-	box-shadow: 0 0 15px -10px;
-}
-
-@mixin cards-a-style {
-	color: black;
-
-	line-height: 5px;
-}
-
-@mixin cards-a-position {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	padding-left: 15px;
-	padding-right: 20px;
-}
-
 // restaurant pages
-
-// header
-
-@mixin logo {
-	font-family: shrikhand, sans-serif;
-	font-size: 30px;
-}
-
-// restaurant page img position
-
-@mixin restaurant-page-img {
-	max-width: 100%;
-	position: relative;
-	z-index: -1;
-	top: 270px;
-	margin-top: -260px;
-}
-@mixin h1-style {
-	font-size: 24px;
-	font-family: shrikhand, sans-serif;
-	margin-left: 40px;
-	padding-top: 40px;
-}
 
 // footer
 
@@ -249,10 +58,6 @@
 	color: white;
 }
 
-@mixin h3 {
-	font-family: shrikhand, sans-serif;
-	color: white;
-}
 @mixin footer-items {
 	display: flex;
 	flex-direction: row;
