@@ -17,3 +17,9 @@ body {
 	margin: auto;
 	font-family: roboto, sans-serif;
 }
+
+@media (min-width: 991px) {
+	body {
+		min-width: 991px;
+	}
+}

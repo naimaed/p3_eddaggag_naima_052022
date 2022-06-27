@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 }
 
+.bold {
+	font-weight: bold;
+}
+
 // page acceuil ohmyfood
 
 // spinner
@@ -133,6 +137,10 @@
 	margin-top: 40px;
 	font-size: 24px;
 	font-weight: bold;
+	@media (min-width: 991px) {
+		display: flex;
+		justify-content: center;
+	}
 }
 
 // nav bar search
@@ -155,6 +163,19 @@
 	@include box-shadow-restaurants-and-menu;
 	@include homepage-box-transitions;
 }
+
+@media (min-width: 991px) {
+	.nav-menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.nav-menu a {
+		width: 400px;
+	}
+}
+
 .nav-menu a:hover {
 	background-color: $color-primary-btn-active;
 	@include box-shadow-restaurants-and-menu;
@@ -210,6 +231,14 @@
 	@include homepage-box-transitions;
 	@include box-shadow-restaurants-and-menu;
 }
+@media (min-width: 991px) {
+	.restaurants-cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 30px;
+	}
+}
+
 .cards img {
 	width: 100%;
 	height: 200px;
@@ -349,20 +378,6 @@
 	@include homepage-box-transitions;
 	z-index: 1;
 	transition: transform 500ms ease-in-out;
-	animation: dish-cards-anim 1s ease-in-out;
-	&::after {
-		content: "";
-		position: absolute;
-		height: 100%;
-		width: 20%;
-		border-radius: 0 20px 20px 0;
-		background-color: $color-tertiary;
-		top: 0;
-		right: 0;
-		z-index: -1;
-		transform: scaleX(0);
-		transform-origin: right;
-	}
 
 	&:hover::after {
 		transform: scaleX(1);
@@ -396,24 +411,50 @@
 }
 
 .dish-cards a {
-	// max-width: 100%;
 	display: flex;
-	// justify-content: space-between;
+	justify-content: space-between;
 	align-items: flex-end;
 	flex-wrap: wrap;
 	color: black;
+	line-height: 20px;
+
 	border: 1px solid red;
 
 	& > * {
 		border: 1px solid black;
 	}
 }
+@media (min-width: 991px) {
+	.menu {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.dish-cards {
+		width: 500px;
+	}
+	dish-cards a {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.dish-cards-slide {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.dish-cards-check {
+	width: 0;
+}
+.dish-cards-price {
+	padding-top: 20px;
+	padding-right: 20px;
+}
 
 .fa-check-circle {
-	position: absolute;
 	opacity: 0;
-	top: 30px;
-	right: -25px;
+	top: 25px;
+	right: -45px;
 	font-size: 28px;
 	border-radius: 50%;
 	color: white;
@@ -444,6 +485,8 @@
 		opacity: 1;
 	}
 }
+
+// order validation button
 
 .order-btn {
 	@include background-image;
