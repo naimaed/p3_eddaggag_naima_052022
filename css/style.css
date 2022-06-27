@@ -373,6 +373,12 @@ a:active {
   align-items: center;
 }
 
+@media (min-width: 991px) {
+  .restaurant-title {
+    display: flex;
+    justify-content: space-around;
+  }
+}
 .cards-heart-menu {
   position: relative;
 }
@@ -437,8 +443,8 @@ a:active {
   position: relative;
   border-radius: 20px;
   margin-bottom: 20px;
-  padding: 5px 5px 5px 20px;
   background-color: white;
+  overflow: hidden;
   box-shadow: 15px 15px 50px -10px;
   transform: scale(1);
   transition: transform, 500ms ease-in-out;
@@ -479,19 +485,18 @@ a:active {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  flex-wrap: wrap;
   color: black;
   line-height: 20px;
-  border: 1px solid red;
 }
 .dish-cards a > * {
   border: 1px solid black;
 }
 
 @media (min-width: 991px) {
-  .menu {
+  .menu-course {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
   }
 
@@ -504,6 +509,13 @@ a:active {
     grid-template-columns: 1fr 1fr;
   }
 }
+.dish-cards-text {
+  padding: 10px 0 10px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .dish-cards-slide {
   display: flex;
   justify-content: flex-end;
@@ -511,17 +523,25 @@ a:active {
 
 .dish-cards-check {
   width: 0;
+  transition: all 500ms;
+}
+
+.dish-cards:hover .dish-cards-check {
+  width: 65px;
+  background-color: #99e2d0;
+  border-radius: 0 10px 10px 0;
 }
 
 .dish-cards-price {
-  padding-top: 20px;
-  padding-right: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 30px 5px 10px 10px;
 }
 
 .fa-check-circle {
-  opacity: 0;
-  top: 25px;
-  right: -45px;
+  margin-left: 15px;
+  margin-top: 15px;
+  padding: 5px;
   font-size: 28px;
   border-radius: 50%;
   color: white;
@@ -529,29 +549,15 @@ a:active {
 }
 
 .dish-cards:hover .fa-check-circle {
-  animation: rotate-center 0.5s ease-in-out both;
+  animation: rotate-center 0.5s ease forwards;
 }
 
 @keyframes rotate-center {
-  0% {
-    transform: translatex(0) rotate(0);
-    opacity: 0;
+  to {
+    transform: translatex(-5) rotate(0);
   }
-  25% {
-    transform: translatex(-20px) rotate(90deg);
-    opacity: 1;
-  }
-  50% {
-    transform: translatex(-40px) rotate(180deg);
-    opacity: 1;
-  }
-  75% {
-    transform: translatex(-60px) rotate(360deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translatex(-80px) rotate(360deg);
-    opacity: 1;
+  from {
+    transform: translatex(-15px) rotate(360deg);
   }
 }
 .order-btn {
