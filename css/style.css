@@ -349,9 +349,11 @@ a:active {
 }
 
 .header-restaurants-menu {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
   margin-bottom: -20px;
 }
 
@@ -363,9 +365,8 @@ a:active {
 .restaurants-img {
   max-width: 100%;
   position: relative;
+  object-position: bottom;
   z-index: -1;
-  top: 270px;
-  margin-top: -260px;
 }
 
 .restaurant-title {
@@ -412,6 +413,21 @@ a:active {
   transform: translate(all 500ms ease-in-out);
 }
 
+.menu {
+  background-color: #f6f6f6;
+  margin-top: -40px;
+  border-radius: 30px 30px 0 0;
+  padding-bottom: 30px;
+}
+
+.restaurants-img-la-note-enchantee {
+  max-width: 100%;
+  position: relative;
+  object-position: bottom;
+  z-index: -1;
+  margin-bottom: -200px;
+}
+
 .menu-course {
   margin: 50px 20px 0 20px;
 }
@@ -432,20 +448,14 @@ a:active {
   top: 25px;
 }
 
-.menu {
-  position: relative;
-  background-color: #f6f6f6;
-  margin-top: -90px;
-  border-radius: 30px 30px 0 0;
-  padding-bottom: 30px;
-}
-
 .dish-cards {
   position: relative;
   border-radius: 20px;
   margin-bottom: 20px;
   background-color: white;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   box-shadow: 15px 15px 50px -10px;
   transform: scale(1);
   transition: transform, 500ms ease-in-out;
@@ -486,6 +496,7 @@ a:active {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  overflow: hidden;
   color: black;
   line-height: 20px;
 }
@@ -509,9 +520,9 @@ a:active {
 }
 .dish-cards-text {
   padding: 10px 0 10px 10px;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .dish-cards-slide {
