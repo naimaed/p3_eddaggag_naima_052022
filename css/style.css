@@ -57,10 +57,6 @@ a:active {
   box-sizing: border-box;
 }
 
-.bold {
-  font-weight: bold;
-}
-
 .loader {
   position: fixed;
   display: flex;
@@ -453,8 +449,7 @@ a:active {
   border-radius: 20px;
   margin-bottom: 20px;
   background-color: white;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  align-items: flex-end;
   white-space: nowrap;
   box-shadow: 15px 15px 50px -10px;
   transform: scale(1);
@@ -495,7 +490,6 @@ a:active {
 .dish-cards a {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   overflow: hidden;
   color: black;
   line-height: 20px;
@@ -518,27 +512,48 @@ a:active {
     grid-template-columns: 1fr 1fr;
   }
 }
-.dish-cards-text {
-  padding: 10px 0 10px 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.dish-cards-content {
+  width: 100%;
+  display: flex;
   white-space: nowrap;
+  overflow: hidden;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
 }
 
-.dish-cards-slide {
+.bold {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dish-cards__side {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dish-cards-check {
+  display: flex;
+  flex-direction: row;
+  width: 70px;
   display: flex;
   justify-content: flex-end;
 }
 
-.dish-cards-check {
-  width: 0;
-  transition: all 500ms;
+.dish-cards-slide {
+  margin-right: -50px;
+  transition: all 400ms;
 }
 
-.dish-cards:hover .dish-cards-check {
-  width: 65px;
+.dish-cards:hover .dish-cards-slide {
+  width: 70px;
+  margin-right: 0;
   background-color: #99e2d0;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 20px 20px 0;
 }
 
 .dish-cards-price {
@@ -548,8 +563,7 @@ a:active {
 }
 
 .fa-check-circle {
-  margin-left: 15px;
-  margin-top: 12px;
+  margin: 12px 10px 0 20px;
   padding: 5px;
   font-size: 28px;
   border-radius: 50%;
@@ -563,10 +577,10 @@ a:active {
 
 @keyframes rotate-center {
   to {
-    transform: translatex(-5) rotate(0);
+    transform: translatex(0) rotate(0);
   }
   from {
-    transform: translatex(-15px) rotate(360deg);
+    transform: translatex(15px) rotate(360deg);
   }
 }
 .order-btn {
