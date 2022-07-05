@@ -151,6 +151,7 @@ a:active {
   padding-bottom: 50px;
 }
 .intro__title {
+  font-family: roboto, sans-serif;
   font-weight: bold;
   font-size: 22px;
   padding-top: 30px;
