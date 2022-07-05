@@ -7,7 +7,7 @@
 	justify-content: center;
 }
 
-@mixin display-space-between {
+@mixin flex-between {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -25,6 +25,10 @@
 }
 
 @mixin box-shadow-restaurants-and-menu {
+	box-shadow: 5px 5px 20px -10px;
+}
+
+@mixin box-shadow-restaurants-and-menu-hover {
 	box-shadow: 15px 15px 50px -10px;
 }
 
@@ -34,7 +38,11 @@
 	align-items: center;
 }
 
-// restaurants cards
+@mixin img-display {
+	max-width: 100%;
+	position: relative;
+	z-index: -1;
+}
 
 @mixin restaurant-display {
 	width: 100%;
@@ -45,31 +53,3 @@
 // restaurant pages
 
 // footer
-
-@mixin footer {
-	display: flex;
-	flex-direction: column;
-	background-color: $color-background-footer;
-	padding-left: 20px;
-	padding-bottom: 30px;
-}
-
-@mixin footer-style {
-	color: white;
-}
-
-@mixin footer-items {
-	display: flex;
-	flex-direction: row;
-	padding-bottom: 10px;
-}
-
-@mixin footer-items-i-1 {
-	padding-right: 10px;
-	font-size: 15px;
-}
-
-@mixin footer-items-i-2 {
-	padding-right: 10px;
-	font-size: 12px;
-}
