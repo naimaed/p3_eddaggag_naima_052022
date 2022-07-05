@@ -26,7 +26,8 @@ body {
 h1 {
   font-weight: bold;
   font-family: shrikhand, sans-serif;
-  font-size: 30px;
+  font-size: 25px;
+  margin: 5px 0;
 }
 
 h2 {
@@ -169,10 +170,13 @@ a:active {
   background-position: right;
   transform: scale(1);
   transition: transform, 500ms ease-in-out;
-  color: white;
 }
 .intro__btn:hover {
   transform: scale(1.05);
+}
+
+.intro a {
+  color: white;
 }
 
 .selection {
@@ -182,7 +186,7 @@ a:active {
 }
 .selection__title {
   margin-top: 40px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 @media (min-width: 991px) {
@@ -247,6 +251,7 @@ a:active {
   }
 }
 #restaurants-ancre {
+  font-size: 22px;
   font-family: roboto, sans-serif;
   margin: 20px 0 20px 15px;
 }
@@ -339,20 +344,36 @@ a:active {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  margin-bottom: -130px;
 }
 
+@media screen and (min-width: 991px) {
+  h1 {
+    font-size: 30px;
+  }
+}
 .restaurants-img {
   max-width: 100%;
   position: relative;
   z-index: -1;
 }
+@media screen and (min-width: 991px) {
+  .restaurants-img {
+    margin-top: -120px;
+    margin-bottom: -50px;
+  }
+}
 .restaurants-img--lanoteenchantee {
   max-width: 100%;
   position: relative;
   z-index: -1;
-  margin-bottom: -200px;
-  margin-top: -150px;
+  margin-bottom: -120px;
+  margin-top: -190px;
+}
+@media screen and (min-width: 991px) {
+  .restaurants-img--lanoteenchantee {
+    margin-top: -380px;
+    margin-bottom: -350px;
+  }
 }
 
 .menu-part {
@@ -432,11 +453,10 @@ a:active {
 }
 
 .dish-cards {
-  position: relative;
   border-radius: 20px;
   margin-bottom: 20px;
+  overflow: hidden;
   background-color: white;
-  white-space: nowrap;
   box-shadow: 5px 5px 20px -10px;
   transform: scale(1);
   transition: transform, 500ms ease-in-out;
@@ -474,7 +494,6 @@ a:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
 }
 
 @media (min-width: 991px) {
@@ -491,20 +510,31 @@ a:active {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: row;
   align-items: center;
   padding-left: 15px;
 }
-.dish-cards-content__bold {
+
+.elipsis {
+  overflow: hidden;
+}
+.elipsis__bold {
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.elipsis__text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dish-cards-check {
   display: flex;
-  flex-direction: row;
-  width: 70px;
-  display: flex;
   justify-content: flex-end;
+  flex-direction: row;
 }
 
 .dish-cards-slide {

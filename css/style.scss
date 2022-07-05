@@ -124,8 +124,10 @@
 		@include background-image;
 		background-position: right;
 		@include homepage-box-transitions;
-		color: white;
 	}
+}
+.intro a {
+	color: white;
 }
 
 // nav bar search
@@ -137,7 +139,7 @@
 
 	&__title {
 		margin-top: 40px;
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: bold;
 		@media (min-width: 991px) {
 			display: flex;
@@ -202,6 +204,7 @@
 
 // title of section
 #restaurants-ancre {
+	font-size: 22px;
 	font-family: roboto, sans-serif;
 	margin: 20px 0 20px 15px;
 }
@@ -295,7 +298,11 @@
 	position: relative;
 	@include flex-between;
 	background-color: white;
-	margin-bottom: -130px;
+}
+@media screen and (min-width: 991px) {
+	h1 {
+		font-size: 30px;
+	}
 }
 
 // main
@@ -304,11 +311,19 @@
 
 .restaurants-img {
 	@include img-display;
+	@media screen and (min-width: 991px) {
+		margin-top: -120px;
+		margin-bottom: -50px;
+	}
 
 	&--lanoteenchantee {
 		@include img-display;
-		margin-bottom: -200px;
-		margin-top: -150px;
+		margin-bottom: -120px;
+		margin-top: -190px;
+		@media screen and (min-width: 991px) {
+			margin-top: -380px;
+			margin-bottom: -350px;
+		}
 	}
 }
 
@@ -391,11 +406,10 @@
 }
 
 .dish-cards {
-	position: relative;
 	border-radius: 20px;
 	margin-bottom: 20px;
+	overflow: hidden;
 	background-color: white;
-	white-space: nowrap;
 	@include box-shadow-restaurants-and-menu;
 	@include homepage-box-transitions;
 
@@ -431,7 +445,6 @@
 }
 .dish-cards a {
 	@include flex-between;
-	overflow: hidden;
 }
 
 @media (min-width: 991px) {
@@ -446,35 +459,32 @@
 
 .dish-cards-content {
 	width: 100%;
-	display: flex;
-	// white-space: nowrap;
-	// overflow: hidden;
-	// text-overflow: ellipsis;
-	justify-content: space-between;
+	@include flex-between;
 	flex-direction: row;
+
 	align-items: center;
 	padding-left: 15px;
+}
+.elipsis {
+	overflow: hidden;
 
 	&__bold {
 		font-weight: bold;
-		// white-space: nowrap;
-		// overflow: hidden;
-		// text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
-
-	// &__side {
-	// 	white-space: nowrap;
-	// 	overflow: hidden;
-	// 	text-overflow: ellipsis;
-	// }
+	&__text {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 }
 
 .dish-cards-check {
 	display: flex;
-	flex-direction: row;
-	width: 70px;
-	display: flex;
 	justify-content: flex-end;
+	flex-direction: row;
 }
 
 .dish-cards-slide {
