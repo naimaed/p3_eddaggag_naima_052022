@@ -98,7 +98,7 @@
 
 .intro {
 	@include display-flex-center;
-	position: relative;
+
 	flex-flow: column wrap;
 	text-align: center;
 	background-color: rgb(247, 247, 247);
@@ -118,13 +118,17 @@
 		font-weight: 300;
 	}
 	&__btn {
-		border: 1px none black;
+		// border: 1px none;
 		padding: 15px 20px 15px 20px;
 		border-radius: 30px;
 		font-size: 16px;
 		@include background-image;
 		background-position: right;
 		@include homepage-box-transitions;
+	}
+	&__btn:hover {
+		opacity: 0.8;
+		box-shadow: 0 10px 10px -2px rgba(0, 0, 0, 0.25);
 	}
 }
 .intro a {
@@ -282,7 +286,6 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		opacity: 1;
-		transform: translate(all 500ms ease-in-out);
 	}
 	@media screen and (min-width: 991px) {
 		.cards-heart {
@@ -373,7 +376,6 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		opacity: 1;
-		transform: translate(all 500ms ease-in-out);
 	}
 }
 
@@ -539,6 +541,13 @@
 		border: none;
 		color: white;
 		@include homepage-box-transitions;
+		box-shadow: 55px 15px 50px -10px;
+		box-shadow: 0 10px 10px -2px rgba(0, 0, 0, 0.25);
+	}
+	&__btn:hover {
+		opacity: 0.8;
+		@include box-shadow-restaurants-and-menu-hover;
+		box-shadow: 0 10px 10px -2px rgba(0, 0, 0, 0.25);
 	}
 }
 // footer
