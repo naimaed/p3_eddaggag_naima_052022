@@ -1,0 +1,37 @@
+.display {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	flex-wrap: wrap;
+	border: solid 1px #f6f6f6;
+	background-color: #f6f6f6;
+	margin-top: 20px;
+	padding-top: 20px;
+	border-radius: 10px;
+}
+
+.card {
+	width: 340px;
+	height: 340px;
+	border: solid red 1px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+.img {
+	position: relative;
+	max-width: 340px;
+	height: 340px;
+	object-fit: cover;
+	border-radius: 10px;
+	z-index: 0;
+}
+.title {
+	border: 1px solid green;
+	margin-top: -40px;
+	position: absolute;
+	color: #000000;
+	font-size: 18px;
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 20px;
+}

@@ -1,0 +1,15 @@
+.header {
+	display: flex;
+	flex-direction: column;
+	background-color: red;
+}
+.logorouge {
+	color: red;
+}
+
+.header-top {
+	display: flex;
+	justify-content: space-between;
+	background-color: green;
+	padding-bottom: 20px;
+}
